@@ -1,0 +1,19 @@
+<h1>Register here!</h1>
+
+<%= form_for (@user) do |f| %>
+  <% flash.each do |key, value| %>
+    <div class="<%= key %>" > <%= value %> </div>
+  <% end %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :email %>
+  <br>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <%= f.submit "Register!" %>
+
+<% end %>
