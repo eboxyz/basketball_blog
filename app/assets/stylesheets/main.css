@@ -1,7 +1,7 @@
 .success{
-  background-color: darkseagreen;
+  background-color: grey;
 }
 
 .error{
-  background-color: rosybrown;
+  background-color: yellow;
 }

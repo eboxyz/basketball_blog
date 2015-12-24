@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
 
   get 'targets/' => 'targets#index', as: :targets
+
+  get 'targets/new' => 'targets#new', as: :new_target
+  post 'targets/new' => 'targets#create'
+
 end
