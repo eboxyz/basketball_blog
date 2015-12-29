@@ -3,9 +3,11 @@ class TargetsController < ApplicationController
 
 
   def index
+    @post = Post.new
   end
 
   def show
+
   end
 
   def create

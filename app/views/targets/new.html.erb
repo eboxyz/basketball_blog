@@ -1,0 +1,18 @@
+<h1> Add a new play! </h1>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </div>
+    #tags
+    #http://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags
+    #section 1.1
+  <%= f.submit "Add your post" %>
+  <% end %>
+
+  <%= link_to "Stop adding a post", targets_path %>

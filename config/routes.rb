@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new', as: :new_user
   post '/' => 'users#create'
 
+  get 'users/profile/:id' => 'user#id', as: :user_profile
+
   get 'sessions/new' => 'sessions#new', as: :new_session
   post 'sessions/new' => 'sessions#create', as: :create_session
 
