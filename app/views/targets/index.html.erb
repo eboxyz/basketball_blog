@@ -3,3 +3,12 @@
 
 <%= link_to "Submit New Post", new_target_path %>
 <%= link_to "Logout", destroy_session_path %>
+
+<ul class="list-group">
+  <% @posts.each { |post| %>
+    <li class="list-group-item">
+      <strong><%= link_to post.title, post_path(post) %></strong>
+    </li>
+    <% } %>
+
+</ul>
