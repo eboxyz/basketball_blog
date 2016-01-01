@@ -30,7 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+#gem for thumbs up
+#https://github.com/bouchard/thumbs_up
+gem 'thumbs_up'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

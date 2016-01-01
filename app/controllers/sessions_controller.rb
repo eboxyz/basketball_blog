@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
 
       flash[:success] = 'You have successfully signed in!'
-      redirect_to targets_path
+      redirect_to posts_path
 
     else
       flash[:error] = 'Unable to sign in.'

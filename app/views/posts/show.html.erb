@@ -1,0 +1,11 @@
+
+
+<h1> <%= @post.title %> </h1>
+<br>
+<br>
+<div class="embed-container">
+  <%= youtube_video @post.youtube_url %>
+</div>
+<%= @post.body %>
+
+<%= link_to "Remove this post.", post_path, method: :delete %>
