@@ -8,4 +8,4 @@
 </div>
 <%= @post.body %>
 
-<%= link_to "Remove this post.", post_path, method: :delete %>
+<%= link_to "Remove this post.", post_id_path(@post.id), method: :delete %>
