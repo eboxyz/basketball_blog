@@ -1,0 +1,7 @@
+<div class="collapse navbar-collapse" id="navbar-collapse">
+        <% if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "User Session", post_path,  :remote => true %></li>
+          </ul>
+        <% end %>
+</div>

@@ -1,0 +1,22 @@
+<h1> Change your post! </h1>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :video %>
+    <%= f.text_field :youtube_url %> <br>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+ <!--    #tags
+    #http://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags
+    #section 1.1 -->
+  <%= f.submit "Submit Changes", method: :update %>
+  <% end %>
+
+  <%= link_to "Stop adding a post", posts_path %>
+

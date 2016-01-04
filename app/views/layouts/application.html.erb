@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project2</title>
+  <div id="navbar-modal"></div>
+  <title>Basketballoggin</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript"> $(function ()
+
+    { $("#myModal").modal({show:false });
+  </script>
 </head>
 <body>
+<%= render "layouts/register/login_modal" %>
+<%= render "layouts/register/sign_up_modal" %>
+
+<%= link_to "Login", "#login", "data-toggle" => "modal", :class => 'btn btn-small' %>
+<%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'btn btn-small btn-success' %>
+
+
 
 <%= yield %>
 

@@ -13,6 +13,19 @@ before_action :authorize
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params.require(post_params))
+      redirect_to post_id_path(@post)
+    else
+      render :edit
+    end
+  end
+
   def youtube_url
     require 'embed'
   end
