@@ -7,6 +7,8 @@ gem 'rails', '4.2.5'
 #gem for bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
+#gem for heroku?
+gem 'heroku'
 #gem for postgresql
   gem 'pg', '~> 0.15'
 #gem for bootstrap modal
@@ -25,7 +27,7 @@ gem 'rails_12factor'
 #ruby version gem
 ruby '2.2.3'
 #puma server for heroku
-gem 'puma'
+
 
 
 # Use jquery as the JavaScript library
