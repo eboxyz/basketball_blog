@@ -12,5 +12,9 @@
   <%= f.password_field :password %>
   <br>
   <%= f.submit "Login" %>
+  <%= f.submit "Login", :class => "btn btn-success" do %>
+  <i style="color: red;" class="glyphicon glyphicon-plus"></i>
+  <% end %>
+
 
 <% end %>

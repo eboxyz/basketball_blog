@@ -7,7 +7,7 @@
 <ul class="list-group">
   <% @posts.each { |post| %>
     <li class="list-group-item">
-      <strong><%= link_to post.title, post_id_path(post) %></strong>
+      <strong><%= link_to post.title, post_path(post.id) %></strong>
 
     </li>
     <% } %>

@@ -19,8 +19,8 @@ before_action :authorize
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(params.require(post_params))
-      redirect_to post_id_path(@post)
+    if @post.update_attributes(post_params)
+      redirect_to post_path
     else
       render :edit
     end
