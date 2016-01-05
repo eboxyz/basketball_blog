@@ -7,8 +7,6 @@ gem 'rails', '4.2.5'
 #gem for bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
-#gem for heroku?
-gem 'heroku'
 #gem for postgresql
   gem 'pg', '~> 0.15'
 #gem for bootstrap modal
@@ -43,7 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 #gem for thumbs up
 #https://github.com/bouchard/thumbs_up
 gem 'thumbs_up'
