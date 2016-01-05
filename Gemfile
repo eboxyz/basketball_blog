@@ -6,6 +6,9 @@ gem 'rails', '4.2.5'
 
 #gem for bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+
+#gem for postgresql
+  gem 'pg', '~> 0.15'
 #gem for bootstrap modal
 #https://github.com/vicentereig/bootstrap-modal-rails
 gem 'bootstrap-modal-rails'
@@ -21,6 +24,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'rails_12factor'
 #ruby version gem
 ruby '2.2.3'
+#puma server for heroku
+gem 'puma'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -55,7 +61,7 @@ group :development do
   gem 'spring'
   #postgres gem for heroku?
   # Use postgresql as the database for Active Record
-  gem 'pg', '~> 0.15'
+
 
 end
 
