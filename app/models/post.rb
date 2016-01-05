@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
   belongs_to :users
   validates_presence_of :title, :body, :youtube_url
 
+
 end
