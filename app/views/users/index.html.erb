@@ -1,13 +1,24 @@
-<h1> Welcome to the club! </h1>
+<div class="homepage" style="padding-top: 150px; height: 800px; background-image: url(assets/images/showus.jpg)" >
+  <h1> Welcome to the club! </h1>
 
-<% flash.each do |key, value| %>
+  <% flash.each do |key, value| %>
   <div class="<%= key %>"><%= value %></div>
-<% end %>
+  <% end %>
 
-<%= link_to "Register", new_user_path %>
+  <p id="intro">Welcome to the secret society of basketball nerds, joining is as simple as registering an account! </p>
 
-<% if current_user %>
-  <%= link_to "Logout", destroy_session_path %>
-<% else %>
-  <%= link_to "Login", new_session_path %>
-<% end %>
+  <div class="button">
+    <%= link_to new_user_path do %>
+    <id="register" class="btn btn-large btn-success">Register</id="register">
+    <% end %>
+    <% if current_user %>
+      <%= link_to destroy_session_path do %>
+      <id="logout" class="btn btn-large btn-danger">Logout</id="logout">
+      <% end %>
+    <% else %>
+      <%= link_to new_session_path do %>
+      <id="login" class="btn btn-large btn-info">Login</id="login">
+      <% end %>
+    <% end %>
+  </div>
+</div>

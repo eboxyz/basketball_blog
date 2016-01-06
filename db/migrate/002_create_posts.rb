@@ -18,3 +18,5 @@ class CreatePosts < ActiveRecord::Migration
 
 end
 
+
+#rails g model post name body user:references
