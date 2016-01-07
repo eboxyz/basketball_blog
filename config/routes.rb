@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
   root 'users#index', as: :users
-  resources :users, :posts
+  resources :posts
 
   namespace :api do
     resources :videos, only: [:index, :show, :create, :update, :destroy]
   end
 
+  get 'users/new' => 'users#new', as: :new_user
+  post '/' => 'users#create'
 
   get 'users/profile/:id' => 'user#id', as: :user_profile
 
