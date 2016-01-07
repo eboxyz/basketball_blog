@@ -14,8 +14,8 @@ class SessionsController < ApplicationController
       redirect_to posts_path
 
     else
-      flash[:error] = 'Unable to sign in.'
-      redirect_to new_session_path
+      flash[:error] = 'Unable to sign in. Try a different username or password.'
+      redirect_to users_path
 
     end
   end

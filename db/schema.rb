@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105183313) do
+ActiveRecord::Schema.define(version: 20160107202123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,12 @@ ActiveRecord::Schema.define(version: 20160105183313) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "youtube_url"
+    t.integer  "comment_id"
+    t.integer  "video_id"
   end
+
+  add_index "posts", ["comment_id"], name: "index_posts_on_comment_id", using: :btree
+  add_index "posts", ["video_id"], name: "index_posts_on_video_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "post_id"
@@ -62,13 +67,20 @@ ActiveRecord::Schema.define(version: 20160105183313) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "post_id"
+    t.integer  "comment_id"
   end
 
+  add_index "users", ["comment_id"], name: "index_users_on_comment_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["post_id"], name: "index_users_on_post_id", using: :btree
 
   create_table "videos", force: :cascade do |t|
-    t.string "code"
+    t.string  "code"
+    t.integer "post_id"
   end
+
+  add_index "videos", ["post_id"], name: "index_videos_on_post_id", using: :btree
 
   create_table "votes", force: :cascade do |t|
     t.boolean  "vote",          default: false, null: false
@@ -84,6 +96,11 @@ ActiveRecord::Schema.define(version: 20160105183313) do
   add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], name: "fk_one_vote_per_user_per_entity", unique: true, using: :btree
   add_index "votes", ["voter_id", "voter_type"], name: "index_votes_on_voter_id_and_voter_type", using: :btree
 
+  add_foreign_key "posts", "comments"
+  add_foreign_key "posts", "videos"
   add_foreign_key "taggings", "posts"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "users", "comments"
+  add_foreign_key "users", "posts"
+  add_foreign_key "videos", "posts"
 end

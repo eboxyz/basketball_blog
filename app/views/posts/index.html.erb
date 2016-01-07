@@ -1,17 +1,19 @@
-<div id="postpage">
-  <h1> You're successfully logged in! Get ready to contribute some greatness! </h1>
-
+<div id="postpage" style="height: 800px; background-image: url(/assets/images/light-wood.jpg); background-size: 100%, no-repeat;">
+  <div id="flashsuccess">
+    <% flash.each do |key, value| %>
+    <div class="<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 
   <%= link_to "Submit New Post", new_post_path %>
   <%= link_to "Logout", destroy_session_path %>
-
-  <ul class="list-group">
-    <% @posts.each { |post| %>
-      <li class="list-group-item">
-        <strong><%= link_to post.title, post_path(post.id) %></strong>
-
-      </li>
+  <div class="allposts">
+    <ul class="list-group">
+      <% @posts.each { |post| %>
+       <li class="list-group-item" id="eachpost">
+          <strong><%= link_to post.title, post_path(post.id) %></strong>
+       </li>
       <% } %>
-
-</ul>
+    </ul>
+  </div>
 </div>

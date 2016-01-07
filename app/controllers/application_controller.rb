@@ -9,11 +9,16 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find session[:user_id] if session[:user_id]
     end
 
-    def authorize
-      unless current_user
-        flash[:error] = 'You must sign in first to access that page.'
-        redirect_to new_session_path
-      end
-    end
+    # def authenticate
+    #   unless current_user
+    #     flash[:error] = 'You must sign in first to access that page.'
+    #     redirect_to new_session_path
+    #   end
+    # end
+
+    # def authorize
+    #   @user = User.find(params[:id])
+    #   redirect_to posts_path if @user != current_user
+    # end
 
 end

@@ -1,4 +1,4 @@
 class Video < ActiveRecord::Base
   include ApplicationHelper
-  belongs_to :posts
+  belongs_to :post
 end

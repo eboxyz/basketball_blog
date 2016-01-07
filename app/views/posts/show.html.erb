@@ -2,13 +2,13 @@
 <h1> <%= @post.title %> </h1>
 <br>
 <br>
-<div class="embed-container">
-<!-- (give this a size) -->
+<!-- <div class="embed-container">
+(give this a size)
   <%= youtube_video @post.youtube_url %>
-</div>
+</div> -->
 <%= @post.body %>
 
 <%= link_to "Edit this post", edit_post_path(@post.id) %>
-<%= link_to "Remove this post.", posts_path(@post.id), method: :delete %>
+<%= link_to "Remove this post.", post_path(@post.id), method: :delete %>
 
 

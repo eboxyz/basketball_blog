@@ -17,11 +17,10 @@
 @import "bootstrap-modal";
 @import "bootstrap";
 @import "mixins/googlefonts";
-@import "newtargets";
 @import "embedyoutube";
-@import "_login_modal";
-@import "loginpage";
-@import "background-images";
-@import "newsession";
-@import "newuser";
-
+@import "welcome/loginpage";
+@import "welcome/_login_modal";
+@import "welcome/newsession";
+@import "welcome/newuser";
+@import "welcome/newtargets";
+@import "posts/index"

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-before_action :authorize
+  before_action :authenticate, only: [:create, :destroy]
+  before_action :authorize_create, only: [:create]
+  before_action :authorize_destroy, only: [:destroy]
 
   def index
     @posts = Post.all
@@ -49,4 +51,20 @@ before_action :authorize
     def post_params
       params.require(:post).permit(:title, :body, :tag, :youtube_url)
     end
+
+    def authenticate
+      redirect_to new_session_path, alert: 'You must be logged in first.' if current_user.nil?
+    end
+
+    def authorize_create
+      @user = User.find(params[:user_id])
+      redirect_to posts_path if @user != current_user
+    end
+
+    def authorize_destroy
+      @post = Post.find(params[:id])
+      redirect_to posts_path if @post.user != current_user
+      flash[:error] = "That isn't your post!"
+    end
+
 end

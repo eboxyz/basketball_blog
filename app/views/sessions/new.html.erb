@@ -1,4 +1,5 @@
-<h1> Login here! </h1>
+<div id="newsesh" style="padding-top: 150px; background-image: url(/assets/images/lbj-wade.jpg); background-size: 100%, no-repeat;">
+<h1 id="seshhead1"> Login here! </h1>
 
 <%= form_for @user, url: create_session_path do |f| %>
   <% flash.each do |key, value| %>
@@ -6,15 +7,18 @@
   <% end %>
   <br>
   <div class="form-field">
-  <%= f.label :email   %>
+  <%= f.label :email, :id => 'seshemail' %>
   <%= f.email_field :email %>
   <br>
-  <%= f.label :password %>
+  <%= f.label :password, :id => 'seshpw' %>
   <%= f.password_field :password %>
   <br>
   </div>
+  <div id="seshlog">
   <%= f.submit "Login", :class => "btn btn-success" do %>
   <i style="color: red;" class="glyphicon glyphicon-plus"></i>
   <% end %>
+  </div>
 
 <% end %>
+</div>
