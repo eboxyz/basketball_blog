@@ -5,16 +5,16 @@
     <div class="<%= key %>"><%= value %></div>
   <% end %>
   <br>
-  <%= f.label :email %>
+  <div class="form-field">
+  <%= f.label :email   %>
   <%= f.email_field :email %>
   <br>
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br>
-  <%= f.submit "Login" %>
+  </div>
   <%= f.submit "Login", :class => "btn btn-success" do %>
   <i style="color: red;" class="glyphicon glyphicon-plus"></i>
   <% end %>
-
 
 <% end %>

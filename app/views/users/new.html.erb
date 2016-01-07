@@ -1,19 +1,27 @@
-<h1>Register here!</h1>
+<h1 id="reg-header">Register here!</h1>
 
 <%= form_for @user do |f| %>
   <% flash.each do |key, value| %>
     <div class="<%= key %>" > <%= value %> </div>
   <% end %>
   <br>
+  <div class="email-reg">
   <%= f.label :email %>
   <%= f.email_field :email %>
   <br>
+  </div>
+  <div class="pw-reg">
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br>
+  </div>
+  <div class="pwc-reg">
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation %>
   <br>
-  <%= f.submit "Register!" %>
+  </div>
+  <div class="sub-reg">
+  <%= f.submit "Register!", :class => "btn btn-info" %>
 
+  </div>
 <% end %>
