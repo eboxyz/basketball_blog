@@ -1,15 +1,17 @@
-<h1> You're successfully logged in! Get ready to contribute some greatness! </h1>
+<div id="postpage">
+  <h1> You're successfully logged in! Get ready to contribute some greatness! </h1>
 
 
-<%= link_to "Submit New Post", new_post_path %>
-<%= link_to "Logout", destroy_session_path %>
+  <%= link_to "Submit New Post", new_post_path %>
+  <%= link_to "Logout", destroy_session_path %>
 
-<ul class="list-group">
-  <% @posts.each { |post| %>
-    <li class="list-group-item">
-      <strong><%= link_to post.title, post_path(post.id) %></strong>
+  <ul class="list-group">
+    <% @posts.each { |post| %>
+      <li class="list-group-item">
+        <strong><%= link_to post.title, post_path(post.id) %></strong>
 
-    </li>
-    <% } %>
+      </li>
+      <% } %>
 
 </ul>
+</div>

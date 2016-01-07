@@ -1,23 +1,23 @@
 <div class="modal fade in" id="login">
   <div class="modal-header">
     <button class="close" data-dismiss="modal">x</button>
-    <h2>Sign in</h2>
+    <h2 id="modalsi">Sign in</h2>
   </div>
   <div class="modal-body">
     <%= form_for :user, url: new_session_path do |f| %>
       <div>
-        <%= f.label :email %>
+        <%= f.label :email, :id => 'loginemail' %>
         <br/>
         <%= f.email_field :email, :autofocus => true %>
         </div>
       <div>
-        <%= f.label :password %>
+        <%= f.label :password, :id => 'loginpw' %>
         <br>
         <%= f.password_field :password %>
         <br>
         <br>
       </div>
-      <%= f.submit "Sign in", :class => 'btn btn-med btn-info' %>
+      <%= f.submit "Sign in", :class => 'btn btn-med btn-info', :id => 'loginbutton' %>
   <% end %>
   </div>
 </div>
