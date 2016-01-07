@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate, only: [:create, :destroy]
-  before_action :authorize_create, only: [:create]
+
   before_action :authorize_destroy, only: [:destroy]
 
   def index
     @posts = Post.all
+    @user = current_user
   end
 
   def new
     @post = Post.new
+    @user = current_user
   end
 
   def show
@@ -33,8 +35,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    if Post.new(post_params).save
-      redirect_to post_path
+    @post = Post.new(post_params)
+    # @post.user_id = session[:user_id]
+    if @post.save
+      redirect_to posts_path
     else
       flash[:error] = "Your post needs a title/body/youtube url"
       redirect_to new_post_path
@@ -42,14 +46,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to post_path
   end
 
   private
     def post_params
-      params.require(:post).permit(:title, :body, :tag, :youtube_url)
+      params.require(:post).permit(:title, :body, :youtube_url, :user_id)
     end
 
     def authenticate

@@ -5,7 +5,7 @@
     <% end %>
   </div>
 
-  <%= link_to "Submit New Post", new_post_path %>
+  <%= link_to "Submit New Post", add_post_path(@user) %>
   <%= link_to "Logout", destroy_session_path %>
   <div class="allposts">
     <ul class="list-group">

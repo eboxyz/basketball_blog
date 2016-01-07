@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :show, :create, :update, :destroy]
   end
 
+  get 'users/:id/new_post' => 'posts#new', as: :add_post
   get 'users/new' => 'users#new', as: :new_user
   post '/' => 'users#create'
 
