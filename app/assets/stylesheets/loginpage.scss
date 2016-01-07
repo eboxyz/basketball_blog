@@ -1,16 +1,19 @@
-h1{
-  font-family: $josefin;
+#loginheader{
+  font-family: $start2p;
   font-weight: bold, italic;
-  font-size: 80px;
+  font-size: 40px;
   text-align: center;
   color: white;
+  padding-top: 20px;
+  text-shadow: 2px 2px purple;
 }
 #intro{
-  font-family: $benchnine;
-  font-size: 20px;
+  font-family: $start2p;
+  font-size: 15px;
   text-align: center;
-  margin-top: 50px;
-  color: white;
+  margin-top: 20px;
+  color: yellow;
+  text-shadow: 2px 2px purple;
 }
 
 .button{
