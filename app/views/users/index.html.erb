@@ -1,9 +1,9 @@
-  <% flash.each do |key, value| %>
-  <div class="<%= key %>"><%= value %></div>
-  <% end %>
 <div class="homepage" style="padding-top: 150px; height: 800px; background-image: url(assets/images/showus.jpg); background-size: 100%, no-repeat;" >
   <h1 id="loginheader"> Welcome to the club! </h1>
 
+  <% flash.each do |key, value| %>
+  <div class="<%= key %>"><%= value %></div>
+  <% end %>
 
   <p id="intro">Welcome to the secret society of basketball nerds, joining is as simple as registering an account! </p>
 

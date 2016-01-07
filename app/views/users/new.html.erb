@@ -1,3 +1,4 @@
+<div class="registerpage" style="padding-top: 150px; height: 800px; background-image: url(/assets/images/bird-erving.jpg);">
 <h1 id="reg-header">Register here!</h1>
 
 <%= form_for @user do |f| %>
@@ -5,23 +6,24 @@
     <div class="<%= key %>" > <%= value %> </div>
   <% end %>
   <br>
-  <div class="email-reg">
+  <div id="email-reg">
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, class: 'email-font'%>
   <br>
   </div>
-  <div class="pw-reg">
+  <div id="pw-reg">
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, class: 'email-font' %>
   <br>
   </div>
-  <div class="pwc-reg">
+  <div id="pwc-reg">
   <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'email-font' %>
   <br>
   </div>
-  <div class="sub-reg">
-  <%= f.submit "Register!", :class => "btn btn-info" %>
+  <div id="sub-reg">
+  <%= f.submit "Register!", :class => "btn btn-success" %>
 
   </div>
 <% end %>
+</div>
