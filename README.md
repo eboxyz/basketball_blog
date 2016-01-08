@@ -45,5 +45,7 @@ README
 
 	Trello
 		https://trello.com/b/tMeJVA7H/ruby-basketball-app
-		
+
+	heroku
+		http://basketballog.herokuapp.com/posts
 			
