@@ -12,6 +12,9 @@
       <% @posts.each { |post| %>
        <li class="list-group-item" id="eachpost">
           <strong><%= link_to post.title, post_path(post.id) %></strong>
+          <div class="embed-container">
+            <%= embed(post.youtube_url) %>
+          </div>
        </li>
       <% } %>
     </ul>
