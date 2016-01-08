@@ -1,0 +1,44 @@
+#post-title{
+  font-family: helvetica;
+  font-size: 30px;
+  margin-left: 25px;
+}
+
+.post-container {
+  position: relative;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  max-height: 800px;
+  text-align: center;
+}
+
+.post-container iframe,
+.post-container object,
+.post-container embed {
+  width: 800px;
+  height: 450px;
+}
+
+.return-btn{
+  margin-left: 35px;
+}
+
+.post-body{
+  font-family: helvetica;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+#cmt-mod{
+  margin-left: 600px;
+}
+
+.comments-list{
+  width: 700px;
+  margin-left: 350px;
+}
+

@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+    @comments = Comment.order("created_at DESC")
   end
 
   def create

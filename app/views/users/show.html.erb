@@ -1,13 +1,27 @@
-
-<h1 id="profhead"> Welcome! <%= @user.name %> </h1>
-
+<div class="prof-bg" style="background-image: url(/assets/images/flcl.jpg)">
+<h1 id="profhead"> Welcome!<%= @user.name %> </h1>
 
 <div class="prof-props">
-  <p id="prof-intro">Welcome to your profile, you can check out your posts, and your comments here.
+  <p id="prof-intro">Welcome to your profile, you can check out your posts,
+  <br>
+   and your comments here.
+  <br>
+  <br>
+  <br>
+  <br>
   </p>
-  <%= @user.name %>
-  <%= @user.email %>
+    <p id="info-head">
+      Info
+    </p>
+  Name: <%= @user.name %>
+  <br>
+  Email: <%= @user.email %>
+
 </div>
+<br>
+<br>
+<br>
+<br>
 <div class="prof-posts">
   <p id="prof-post-intro">
   These are your posts:
@@ -32,7 +46,14 @@
     <% end %>
   </ul>
 </div>
-
+<br>
+<br>
+<div class="edit-user-btn">
 <% if current_user.id == @user.id %>
-  <%= link_to "Edit this page", edit_user_path %>
+  <%= link_to edit_user_path do %>
+    <id="edit-user-btn" class="btn btn-lg btn-default">Edit User
+  </id="edit-user-btn">
+    <% end %>
   <% end %>
+  </div>
+</div>

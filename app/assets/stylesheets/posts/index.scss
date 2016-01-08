@@ -1,10 +1,28 @@
+.mng-btns{
+  text-align: right;
+  margin-right: 15px;
+  font-family: $ceviche;
+  font-size: 35px;
+}
+
+#eachpost{
+  font-family: $merriweather, extra-bold;
+}
+.title-font{
+  font-size: 30px;
+  color: orange;
+  text-shadow: 1px 1px white;
+}
 .allposts{
   max-width: 800px;
   margin-left: 100px;
+  margin-bottom: 20px;
 }
 
 .page-container{
   position: relative;
+  padding-right: 20px;
+  padding-left: 20px;
   padding-bottom: 56.25%;
   padding-top: 30px;
   height: 0;
@@ -19,6 +37,15 @@
 .page-container embed {
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
+  width: 99%;
   height: 100%;
+}
+
+.list-group-item{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#body-font{
+  font-color: yellow;
 }
