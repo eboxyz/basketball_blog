@@ -8,6 +8,10 @@
 </div> -->
 <%= @post.body %>
 
+<div class="embed-container">
+  <%= embed(@post.youtube_url) %>
+</div>
+
 <ul class="list-group">
   <%  @post.comments.each do |comment|%>
     <li class="list-group-item">
