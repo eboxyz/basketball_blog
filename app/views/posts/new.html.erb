@@ -10,7 +10,7 @@
     <%= f.text_field :youtube_url %> <br>
     <%= f.label :body %>
     <%= f.text_area :body %>
-    <%= f.hiddenx_field :user_id, :value => @user.id%>
+    <%= f.hiddenx_field :user_id, :value => current_user.id%>
   </div>
 
  <!--    #tags
