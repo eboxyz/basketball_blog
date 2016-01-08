@@ -48,6 +48,9 @@
 </div>
 <br>
 <br>
+<%= link_to posts_path do %>
+  <id="return-btn" class="btn btn-lg btn-default"> Return to posts </id="return-btn">
+<% end %>
 <div class="edit-user-btn">
 <% if current_user.id == @user.id %>
   <%= link_to edit_user_path do %>
