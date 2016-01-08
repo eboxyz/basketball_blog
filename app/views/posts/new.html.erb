@@ -1,23 +1,35 @@
-<h1> Add a new play! </h1>
+<div class="newpostbg" style="padding-top: 15px; height: 800px; background-image: url(/assets/images/lbj-wade.jpg">
+<h1 id="newposthead"> Add a new play! </h1>
 
+<div class="post-form">
 <%= form_for @post do |f| %>
-  <div>
+  <div id="post-tit">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div>
     <%= f.label :video %>
     <%= f.text_field :youtube_url %> <br>
+  </div>
+  <div id="post-body">
     <%= f.label :body %>
     <%= f.text_area :body %>
+
     <%= f.hidden_field :user_id, :value => @user.id%>
   </div>
-
+</div>
  <!--    #tags
     #http://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags
     #section 1.1 -->
-  <%= f.submit "Add your post" %>
+  <div class="sub-btn">
+  <%= f.submit do %>
+  <id="postsubmit" class="btn btn-med btn-success">Add your post</id="postsubmit">
+  <% end %>
   <% end %>
 
-  <%= link_to "Stop adding a post", posts_path %>
-
+  <%= link_to posts_path do %>
+    <id="returnpost" class="btn btn-med btn-danger">Stop adding posts</id="returnpost">
+  <% end %>
+  </div>
+  </div>
+</div>
