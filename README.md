@@ -37,4 +37,13 @@ README
 				
 			https://github.com/bouchard/thumbs_up
 			
+	Problems
+		Problems I ran into were, getting sick in the middle of project week, and skipping essentially two days of work time. I spent a lot of time working on learning how to properly migrate and manipulate database communication. Also, a huge part is how structured ruby is, and how strict the requirements are for something. 
+
+		I solved all the problems that I had set with the time available, but I wish I could've added a few more features. 
+
+
+	Trello
+		https://trello.com/b/tMeJVA7H/ruby-basketball-app
+		
 			
