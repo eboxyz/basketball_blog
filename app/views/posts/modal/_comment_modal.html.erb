@@ -1,0 +1,21 @@
+<div class="modal fade in" id="comments">
+  <div class="commodal-header">
+    <button class="close" data-dismiss="modal">x</button>
+    <h2 id="modalcom">Write your comment</h2>
+  </div>
+  <div class="commodal-body">
+    <%= form_for :comment, url: post_comments_path(@post) do |f| %>
+      <form>
+      <fieldset class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </fieldset>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :post_id, :value => @post.id %>
+        <br>
+        <br>
+      </div>
+      <%= f.submit "Add your comment", :class => 'btn btn-med btn-primary', :id => 'addcomment' %>
+  <% end %>
+  </div>
+</div>

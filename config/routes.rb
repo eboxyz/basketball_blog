@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'users#index', as: :users
-  resources :posts
+
+  resources :posts do
+   resources :comments
+  end
 
   namespace :api do
     resources :videos, only: [:index, :show, :create, :update, :destroy]

@@ -1,0 +1,22 @@
+<div class="modal fade in" id="comments">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">x</button>
+    <h2 id="modalsi">Write your comment</h2>
+  </div>
+  <div class="modal-body">
+    <%= form_for :comment, url: create_comment_path do |f| %>
+    <form>
+      <fieldset class="form-group">
+        <%= f.label :body%>
+        <br>
+        <%= f.text_area :body %>
+      </fieldset>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :post_id, :value => @post.id %>
+        <br>
+        <br>
+      <%= f.submit "Add your comment", :class => 'btn btn-med btn-primary', :id => 'addcomment' %>
+  <% end %>
+  </form>
+  </div>
+</div>

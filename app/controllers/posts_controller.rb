@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate, only: [:create, :destroy]
-
+  before_action :authorize_update, only: [:update]
   before_action :authorize_destroy, only: [:destroy]
 
   def index
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to post_path
+    redirect_to posts_path
   end
 
   private
@@ -64,10 +64,14 @@ class PostsController < ApplicationController
       redirect_to posts_path if @user != current_user
     end
 
+    def authorize_update
+      @post = Post.find(params[:id])
+      redirect_to posts_path if @post.user != current_user
+    end
+
     def authorize_destroy
       @post = Post.find(params[:id])
       redirect_to posts_path if @post.user != current_user
-      flash[:error] = "That isn't your post!"
     end
 
 end

@@ -8,7 +8,23 @@
 </div> -->
 <%= @post.body %>
 
+<ul class="list-group">
+  <%  @post.comments.each do |comment|%>
+    <li class="list-group-item">
+    <%= comment.body %>
+    </li>
+<% end %>
+</ul>
+
+<% if current_user == @post.user %>
+
 <%= link_to "Edit this post", edit_post_path(@post.id) %>
 <%= link_to "Remove this post.", post_path(@post.id), method: :delete %>
 
+<% end %>
 
+
+
+
+<%= render "posts/modal/comment_modal" %>
+<%= link_to "Add a comment!", "#comments", "data-toggle" => "modal", :class=> 'btn btn-large btn-primary' %>
