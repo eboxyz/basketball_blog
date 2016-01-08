@@ -24,9 +24,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'rails_12factor'
 #ruby version gem
 ruby '2.2.3'
-#puma server for heroku
 
-
+#gem for tagging
+gem 'acts-as-taggable-on'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

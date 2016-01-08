@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107235718) do
+ActiveRecord::Schema.define(version: 20160108020448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20160107235718) do
     t.integer  "user_id"
     t.text     "title"
     t.text     "body"
-    t.text     "tag"
     t.text     "comment"
     t.integer  "upvote"
     t.integer  "downvote"
@@ -68,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160107235718) do
     t.datetime "updated_at"
     t.integer  "post_id"
     t.integer  "comment_id"
+    t.string   "name"
   end
 
   add_index "users", ["comment_id"], name: "index_users_on_comment_id", using: :btree

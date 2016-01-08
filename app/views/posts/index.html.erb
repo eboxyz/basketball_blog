@@ -1,10 +1,10 @@
-<div id="postpage" style="height: 800px; background-image: url(/assets/images/light-wood.jpg); background-size: 100%">
+<div id="postpage" style="background-image: url(/assets/images/light-wood.jpg); background-size: 100%; background-repeat: repeat-y;">
   <div id="flashsuccess">
     <% flash.each do |key, value| %>
     <div class="<%= key %>"><%= value %></div>
     <% end %>
   </div>
-
+  <%= link_to "User Profile", user_path(@user) %>
   <%= link_to "Submit New Post", add_post_path(@user) %>
   <%= link_to "Logout", destroy_session_path %>
   <div class="allposts">
@@ -12,7 +12,7 @@
       <% @posts.each { |post| %>
        <li class="list-group-item" id="eachpost">
           <strong><%= link_to post.title, post_path(post.id) %></strong>
-          <div class="embed-container">
+          <div class="page-container">
             <%= embed(post.youtube_url) %>
           </div>
        </li>

@@ -1,0 +1,38 @@
+
+<h1 id="profhead"> Welcome! <%= @user.name %> </h1>
+
+
+<div class="prof-props">
+  <p id="prof-intro">Welcome to your profile, you can check out your posts, and your comments here.
+  </p>
+  <%= @user.name %>
+  <%= @user.email %>
+</div>
+<div class="prof-posts">
+  <p id="prof-post-intro">
+  These are your posts:
+  </p>
+  <ul class="prof-post-list-group">
+    <% @user.posts.each do |post| %>
+    <li class="prof-post-list-group-item" %>
+      <%= link_to post.title, post_path(post.id) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="prof-comments">
+  <p id="prof-comments-intro">
+  These are your comments:
+  </p>
+  <ul class="prof-list-group">
+    <% @user.comments.each do |comment| %>
+    <li class="prof-list-group-item">
+      <%= link_to comment.body, post_path(comment.post.id) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "Edit this page", edit_user_path %>
+  <% end %>

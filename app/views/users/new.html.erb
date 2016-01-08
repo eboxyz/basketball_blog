@@ -5,7 +5,10 @@
   <% flash.each do |key, value| %>
     <div class="<%= key %>" > <%= value %> </div>
   <% end %>
-  <br>
+  <div id="name-reg">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'email-font' %>
+  </div>
   <div id="email-reg">
   <%= f.label :email %>
   <%= f.email_field :email, class: 'email-font'%>

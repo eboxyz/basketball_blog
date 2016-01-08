@@ -1,0 +1,16 @@
+<h1 id="user-edit-header"> Change your info! </h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <%= f.submit "Change yourself" %>
+  <% end %>
+
+  <%= link_to "Stop changing yourself", user_path %>
